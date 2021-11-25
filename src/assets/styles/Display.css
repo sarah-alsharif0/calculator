@@ -1,0 +1,9 @@
+.display-container{
+    background-color: white;
+    width: 82%;
+    border-radius: 10px ;
+    margin:30px auto 0px auto;
+    font-size: 60px;
+    padding: 10px;
+    overflow-x: hidden;
+}

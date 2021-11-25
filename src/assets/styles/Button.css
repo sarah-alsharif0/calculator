@@ -1,0 +1,22 @@
+.button{
+    cursor: pointer;
+    color: white;
+    border: none;
+    width: 20%;
+    padding: 17px ;
+    font-size: 35px;
+    background-color: rgb(163, 94, 228);
+    border-radius: 10px;
+    margin:5px;
+}
+.equal-button{
+    cursor: pointer;
+    color: white;
+    border: none;
+    width: 42%;
+    padding: 17px;
+    font-size: 35px;
+    background-color: rgb(235, 117, 96);
+    border-radius: 10px;
+    margin:5px;
+}
