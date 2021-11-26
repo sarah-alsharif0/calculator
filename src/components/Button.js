@@ -3,13 +3,11 @@ import '../assets/styles/Button.css'
 
 export const Button = (props) => {
     const click = () => {
-        console.log('clicked');
-        props.handleClick(props.digit);
-        
+        props.handleClick(props.character);
     }
     return (
-        <button onClick={click} className={props.digit === '='?"equal-button":"button"}>
-            {props.digit}
+        <button onClick={click} className={props.character === '='?"equal-button":"button"}>
+            {props.character}
         </button>
     )
 }
