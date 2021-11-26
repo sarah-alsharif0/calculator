@@ -4,7 +4,7 @@ import '../assets/styles/Display.css'
 export const Display = (props) => {
     return (
         <div className="display-container">
-            {props.value['secondNum']?props.value['secondNum']:props.value['firstNum']}
+            {props.value['secondNum']!==null?props.value['secondNum']:props.value['firstNum']}
         </div>
     )
 }
