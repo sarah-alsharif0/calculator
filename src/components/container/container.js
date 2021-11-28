@@ -2,6 +2,8 @@ import React,{useState} from 'react'
 import {Display} from '../display/display.js'
 import {ButtonsContainer} from '../buttonsContainer/buttonsContainer.js'
 import '../container/container.css'
+import { Header } from '../header/header.js'
+import { Fragment } from 'react'
 
 export const Container = () => {
     const [data, setData] = useState({
@@ -41,17 +43,17 @@ export const Container = () => {
     const handleNumber = (num) => {
         if(data['operator'] === '' || data['operator'] === '='){
             if(data['firstNum'] === 0 || data['operator'] === '='){
-                setData({...data, firstNum: parseInt(num), operator: ''});
+                setData({...data, firstNum: parseFloat(num), operator: ''});
             } else {
                 if(data['firstNum'])
-                setData({...data, firstNum: parseInt(data['firstNum']+num)})
+                setData({...data, firstNum: parseFloat(data['firstNum']+num)})
             }
         } else {
             if(data['secondNum'] === null){
-                setData({...data, secondNum: parseInt(num)});
+                setData({...data, secondNum: parseFloat(num)});
             } else {
                 if(data['secondNum'])
-                setData({...data, secondNum: parseInt(data['secondNum']+num)})
+                setData({...data, secondNum: parseFloat(data['secondNum']+num)})
             }
         }
     }
@@ -66,18 +68,22 @@ export const Container = () => {
                 secondNum: null,
                 operator:''
             });
-        } else if (!isNaN(character)){
+        } else if (!isNaN(character) || character === '.'){
             handleNumber(character);
         } else if (isOperator(character)){
             handleOperator(character);
         } else if (character === '='){
             handleEqual('=');
         }
+        console.log(data);
     }
     return (
-        <div className="calculator-container">
-            <Display value={data}/>
-            <ButtonsContainer handleClick={handleClick}/>
-        </div>
+        <Fragment>
+            <Header />
+            <div className="calculator-container">
+                <Display value={data}/>
+                <ButtonsContainer handleClick={handleClick}/>
+            </div>
+        </Fragment>
     )
 }
