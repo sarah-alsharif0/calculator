@@ -1,5 +1,5 @@
 import React from 'react'
-import '../assets/styles/Button.css'
+import '../button/button.css'
 
 export const Button = (props) => {
     const click = () => {

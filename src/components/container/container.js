@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
-import {Display} from './Display'
-import {ButtonsContainer} from './ButtonsContainer'
-import '../assets/styles/Container.css'
+import {Display} from '../display/display.js'
+import {ButtonsContainer} from '../buttonsContainer/buttonsContainer.js'
+import '../container/container.css'
 
 export const Container = () => {
     const [data, setData] = useState({

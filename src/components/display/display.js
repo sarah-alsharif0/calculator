@@ -1,5 +1,5 @@
 import React from 'react'
-import '../assets/styles/Display.css'
+import '../display/display.css'
 
 export const Display = (props) => {
     return (
